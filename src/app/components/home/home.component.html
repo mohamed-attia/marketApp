@@ -7,7 +7,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ good.name | titlecase }}</h5>
             <p class="card-text">{{ good.price | currency }}</p>
-            <button href="#" class="btn btn-primary" (click)="addtoCart(i)">Add to Cart</button>
+            <button href="#" class="btn btn-primary" (click)="addtoCart(good.id)">Add to Cart</button>
           </div>
         </div>
       </div>
