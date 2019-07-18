@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink='/'>MarketApp</a>
+  <a class="navbar-brand">MarketApp</a>
   <button
     class="navbar-toggler"
     (click)="toggleNavbar()"
@@ -19,24 +19,24 @@
     id="navbarSupportedContent"
   >
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isUser">
         <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
           >Home <span class="sr-only">(current)</span></a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isUser">
         <a class="nav-link" routerLink="/cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Cart</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isUser">
         <a class="nav-link" routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isUser">
         <a class="nav-link" routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isUser">
         <a class="nav-link" routerLink="/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Signup</a>
       </li>
-      <li class="nav-item float-right"><button class="btn btn-danger" (click)="logOut()">Logout</button></li>
+      <li class="nav-item float-right" *ngIf="isUser"><button class="btn btn-danger" (click)="logOut()">Logout</button></li>
     </ul>
   </div>
 </nav>

@@ -8,7 +8,7 @@ import { GoodComponent } from "./components/good/good.component";
 import { NotfoundComponent } from "./components/notfound/notfound.component";
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "", component: HomeComponent,pathMatch: 'full' },
   { path: "signup", component: SignupComponent },
   { path: "login", component: LoginComponent },
   { path: "cart", component: CartComponent },

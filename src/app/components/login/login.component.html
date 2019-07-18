@@ -1,6 +1,6 @@
 <div class="container">
   <div class="sign-up">
-    <h2 class="text-center">Sing Up</h2>
+    <h2 class="text-center">LogIn</h2>
     <form #lForm="ngForm" (ngSubmit)="LogIn(lForm)">
       <input
         ngModel
@@ -46,18 +46,9 @@
       >
         minlength is 6
       </div>
-      <input
-        ngModel
-        #passwordConfirm="ngModel"
-        name="passwordConfrim"
-        required
-        type="password"
-        class="form-control form-group"
-        placeholder="confirm password"
-      />
 
       <button
-        [disabled]="lForm.invalid || passwordConfirm.value !== password.value"
+        [disabled]="lForm.invalid"
         class="btn btn-primary"
       >
         Login
