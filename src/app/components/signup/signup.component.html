@@ -94,7 +94,7 @@
         class="alert alert-danger"
         *ngIf="address.invalid && address.touched"
       >
-        name is required
+        address is required
       </div>
       <button
         [disabled]="lForm.invalid || passwordConfirm.value !== password.value"
@@ -103,5 +103,8 @@
         Create Account
       </button>
     </form>
+  </div>
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    {{errorMessage}}
   </div>
 </div>

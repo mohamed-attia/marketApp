@@ -5,9 +5,9 @@ import { AngularFirestore } from "@angular/fire/firestore";
   providedIn: "root"
 })
 export class HomeService {
-  constructor(private fs: AngularFirestore) {}
+  constructor(private angFireStore: AngularFirestore) {}
 
   getAllGoods(){
-      return this.fs.collection('goods').snapshotChanges();
+      return this.angFireStore.collection('goods').snapshotChanges();
   }
 }

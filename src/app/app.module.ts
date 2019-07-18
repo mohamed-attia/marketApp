@@ -12,7 +12,11 @@ import { NotfoundComponent } from "./components/notfound/notfound.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FormsModule } from "@angular/forms";
 import { AngularFireModule } from "@angular/fire";
-import {AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/firestore'
+import {
+  AngularFirestoreModule,
+  FirestoreSettingsToken
+} from "@angular/fire/firestore";
+import { AngularFireAuthModule } from "@angular/fire/auth";
 
 @NgModule({
   declarations: [
@@ -39,9 +43,10 @@ import {AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/fire
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
-  providers: [{provide:FirestoreSettingsToken, useValue:{}}],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
