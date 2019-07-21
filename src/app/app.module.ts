@@ -12,10 +12,12 @@ import { NotfoundComponent } from "./components/notfound/notfound.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FormsModule } from "@angular/forms";
 import { AngularFireModule } from "@angular/fire";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   AngularFirestoreModule,
   FirestoreSettingsToken
 } from "@angular/fire/firestore";
+import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 
 @NgModule({
@@ -30,12 +32,14 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     NavbarComponent
   ],
   imports: [
+    AngularFireStorageModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyC3nKrnmv4PaNkGQ7rNcl1ZgpZejkQvhuE",
       authDomain: "marketapp-bd346.firebaseapp.com",
       databaseURL: "https://marketapp-bd346.firebaseio.com",
       projectId: "marketapp-bd346",
-      storageBucket: "",
+      storageBucket: "marketapp-bd346.appspot.com",
       messagingSenderId: "686360715672",
       appId: "1:686360715672:web:52f79c8f692d6890"
     }),

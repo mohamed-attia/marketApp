@@ -1,6 +1,6 @@
 export interface GoodModel {
     id?:string
     name?: string;
-    price?: string;
+    price?: number;
     photoUrl?: string;
 }

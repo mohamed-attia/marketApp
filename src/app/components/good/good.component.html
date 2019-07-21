@@ -1,3 +1,23 @@
-<p>
-  good works!
-</p>
+  <h2 class="text-center">Add New Good</h2>
+  <form #addForm="ngForm" (ngSubmit)="addNewGood(addForm)">
+    <input
+      type="text"
+      ngModel
+      name="name"
+      placeholder="name"
+      required
+      class="form-control form-group"
+    />
+    <input
+      type="number"
+      ngModel
+      name="price"
+      required
+      placeholder="price"
+      class="form-control form-group"
+    />
+    <input  type="file" #image ngModel name="image" class="form-control form-group" required>
+    <button class="btn btn-primary" [disabled]="addForm.invalid">
+      Add
+    </button>
+  </form>

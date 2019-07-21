@@ -1,3 +1,32 @@
-<p>
-  cart works!
-</p>
+<div class="cart-comp">
+  <table class="table">
+    <thead>
+      <Th>Name</Th>
+      <Th>Price</Th>
+      <Th>Amount</Th>
+      <Th>Total</Th>
+      <Th>Options</Th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts; index as i">
+        <td>{{ cart.name }}</td>
+        <td>{{ cart.price | currency }}</td>
+        <td>
+          <input
+            class="form-control"
+            type="number"
+            placeholder="amount (Kg)"
+            [(ngModel)]="cart.amount"
+          />
+        </td>
+        <td>{{ cart.price * cart.amount | currency }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="saveCart(i)">Save</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteCart(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
