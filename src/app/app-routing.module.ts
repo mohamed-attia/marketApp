@@ -6,12 +6,13 @@ import { SignupComponent } from "./components/signup/signup.component";
 import { CartComponent } from "./components/cart/cart.component";
 import { GoodComponent } from "./components/good/good.component";
 import { NotfoundComponent } from "./components/notfound/notfound.component";
+import { GuardService } from "./api/services/guard.service";
 
 const routes: Routes = [
   { path: "", component: HomeComponent,pathMatch: 'full',data:{index:0} },
   { path: "signup", component: SignupComponent },
   { path: "login", component: LoginComponent },
-  { path: "cart", component: CartComponent,data:{index:1} },
+  { path: "cart", component: CartComponent,data:{index:1},canActivate:[GuardService] },
   { path: "admin", component: GoodComponent },
   { path: "**", component: NotfoundComponent }
 ];
