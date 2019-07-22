@@ -3,6 +3,8 @@ import { GoodModel } from "src/app/api/models/goods.interface";
 import { HomeService } from "src/app/api/services/home.service";
 import { Subscription } from "rxjs";
 import { CartService } from "src/app/api/services/cart.service";
+import { AuthService } from "src/app/api/services/auth.services";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -14,14 +16,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   public unSubscribeData = new Subscription();
   public add: number = -1;
 
-  constructor(private homeService: HomeService, private cartService: CartService) {}
+  constructor(private router:Router, private authService: AuthService, private homeService: HomeService, private cartService: CartService) {}
 
   ngOnInit() {
     this.getAllGoods();
   }
 
   public addtoCart(i: number) {
-    this.add = +i;
+    if(this.authService.userId) this.add = +i;
+    else this.router.navigate(['/login'])
   }
 
   public getAllGoods() {

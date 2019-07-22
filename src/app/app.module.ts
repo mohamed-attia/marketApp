@@ -11,8 +11,10 @@ import { SignupComponent } from "./components/signup/signup.component";
 import { NotfoundComponent } from "./components/notfound/notfound.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FormsModule } from "@angular/forms";
-import { AngularFireModule } from "@angular/fire";
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { AngularFireModule } from "@angular/fire";
 import {
   AngularFirestoreModule,
   FirestoreSettingsToken
